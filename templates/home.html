@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="post" class="buttons">
+    <h1 class="gradient">Sparkplug</h1>
+    <h4>Live Chat Rooms</h4>
+
+    <div>
+        <input autocomplete="off" class="inp" type="text" placeholder="Pick a name!" name="name" value="{{name}}" />
+    </div>
+    <button type="submit" name="create" class="create-btn transition">Create a room</button>
+    <h4>OR</h4>
+    <div class="join">
+        <input autocomplete="off" class="inp" type="text" placeholder="Room Code" name="code" value="{{code}}" />
+        <button class="transition" type="submit" name="join">Join a room</button>
+    </div>
+
+    
+    {% if error %}
+    <ul>
+        <li id="error-msg">{{error}}</li>
+    </ul>
+    {% endif %}
+
+</form>
+{% endblock %}
